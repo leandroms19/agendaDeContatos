@@ -223,7 +223,7 @@ input[type=number] {
 .search-icon {
     float: right;
 }
-@media only screen and (max-height: 770px){
+@media only screen and (max-height: 768px){
     #contactList{
         height: 520px;
     }
