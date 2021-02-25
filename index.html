@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="sidebar"></div>
+        <header class="header">
+            <img src="logo.png">
+            <h1>Agenda de Contatos</h1>
+        </header>
+
+        <div class="content1">
+            <div id="formulary">
+                <form id="form">
+                    <label for="name">Nome: </label>
+                    <input type="text" id="contactName">
+                    <br /><br />
+
+                    <label for="numero">Número: </label>
+                    <input type="number" id="number" placeholder="(xxx)xxxxx-xxxx">
+                    <br /><br />
+
+                    <label for="marcador">Marcador: </label>
+                    <select id="option">
+                        <option id="A"></option>
+                        <option id="B" value="Telefone Celular">Celular</option>
+                        <option id="C" value="Telefone Residencial">Telefone Residencial</option>
+                        <option id="D" value="Telefone Comercial">Telefone Comercial</option>
+                    </select>
+                    <br /><br />
+
+                    <label for="email">E-mail: </label>
+                    <input type="email" id="email">
+                    <br /><br />
+
+                    <button id="formButton">Salvar Contato</button>
+                    <br />
+
+                </form>
+            </div>
+        </div>
+
+        <div class="content2">
+            <div id="searchField">
+                <input type="text" id="searchBar" placeholder="Pesquisar" style="opacity: 70%;">
+                <div class="search-icon" style="margin-top: 4px">
+                    <a><i class="material-icons" style="font-size:24px">search</i></a>
+                </div>
+            </div>
+            <div id="contactList">
+                <table id="table">
+                    <tbody id="tbody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
