@@ -5,14 +5,14 @@ const email = document.getElementById("email");
 const tbody = document.getElementById('tbody');
 let contactSaved = [];
 let dinamicID = 0;
-let letters = /^[A-Za-z \u00C0-\u017F]+$/;
+let allowedCharacters = /^[A-Za-z \u00C0-\u017F]+$/;
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     checkInputs();
 })
 
-function cleanForm() {
+function cleanForm() {"
     document.getElementById("form").reset();
 }
 
@@ -28,7 +28,7 @@ function checkInputs() {
         return false
     }
 
-    if (contactNumber.value.length != 11 && !letters.test(contactName.value)) {
+    if (contactNumber.value.length != 11 && !allowedCharacters.test(contactName.value)) {
         alert("Caracter(es) inválido(s) e número inválido!")
         contactName.value = '';
         contactNumber.value = '';
@@ -49,7 +49,7 @@ function checkInputs() {
         return false
     }
 
-    if (!letters.test(contactName.value)) {
+    if (!allowedCharacters.test(contactName.value)) {
         alert("Caracter inválido!")
         contactName.value = '';
         contactName.focus();
@@ -110,12 +110,12 @@ function loadList(contactSaved) {
             <div style="border-bottom: 1px solid white">
                 <a><i class="material-icons" style="font-size:24px">person</i></a></br>
                 <span id="nome">${contactSaved[i].name} </span>
-            </div> </br>
+            </div>
             <div style="border-bottom: 1px solid white">
                 <a><i class="material-icons" style="font-size:24px">call</i></i></a></br>
                 <span class="info">${contactSaved[i].number}</span></br>
                 <span class="info">${contactSaved[i].tipoNumero}</span>
-            </div></br>
+            </div>
             <div style="border-bottom: 1px solid white">
                 <a><i class="material-icons" style="font-size:24px">mail_outline</i></a></br>
                 <span class="info"> E-mail: ${contactSaved[i].emailContact}</span>
@@ -166,7 +166,7 @@ searchField.addEventListener("keyup", (e) => {
         if (searchString.length && searchString == "") {
             loadList(contactSaved);
         }
-        if (letters.test(searchString)) {
+        if (allowedCharacters.test(searchString)) {
             return contact.name.includes(searchString);
         }
         else {

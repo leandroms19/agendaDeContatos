@@ -33,6 +33,7 @@ header {
     background-color: #0d5794;
     color: white;
     display: inline-flex;
+    height: 90px;
 }
 
 form {
@@ -48,8 +49,8 @@ form {
 
 
 img {
-    padding-top: 20px;
-    padding-left: 5px;
+    margin-top: 10px;
+    margin-left: 5px;
     height: 70px;
     width: 60px;
 }
@@ -57,7 +58,7 @@ img {
 h1 {
     font-size: 30px;
     color: white;
-    padding-top: 20px;
+    margin-top: 30px;
     padding-left: 20px;
 }
 
@@ -79,10 +80,11 @@ span {
 }
 
 table {
+    margin-top: 10px;
     width: 100%;
     height: auto;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: 700;
+    font-weight: 700; 
 }
 
 .item {
@@ -158,6 +160,7 @@ input[type=number] {
     border: 1px solid #dddddd;
     width: 570px;
     height: 26px;
+    box-shadow: 1px 1px 2px rgb(110, 110, 110);
 }
 
     #searchBar:focus {
@@ -283,6 +286,9 @@ input[type=number] {
 }
 
 @media only screen and (max-width: 618px) {
+    #searchField{
+        width: 480px;
+    }
     #contactList {
         width: 480px;
     }
