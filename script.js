@@ -12,7 +12,7 @@ form.addEventListener('submit', (e) => {
     checkInputs();
 })
 
-function cleanForm() {"
+function cleanForm() {
     document.getElementById("form").reset();
 }
 
