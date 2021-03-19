@@ -10,56 +10,64 @@
 
 <body>
     <div class="container">
-        <div class="sidebar"></div>
-        <header class="header">
-            <img src="logo.png">
-            <h1>Agenda de Contatos</h1>
-        </header>
+        <main>
+            <div class="mainArea">
+                
+                <div class="content1">
+                    <div class="logo">
+                        <img src="logo.png">
+                        <h2>Agenda de Contatos</h2>
+                    </div>
 
-        <div class="content1">
-            <div id="formulary">
-                <form id="form">
-                    <label for="name">Nome: </label>
-                    <input type="text" id="contactName">
-                    <br /><br />
+                    <div id="formulary">
+                        <form id="form">
+                            <div class="form-group">
+                                <label class="labelClass" for="name">Nome: </label>
+                                <input class="inputClass" type="text" id="contactName">
+                                <div class="error-hint hidden">Preencha um nome válido!</div>
+                            </div>
 
-                    <label for="numero">Número: </label>
-                    <input type="number" id="number" placeholder="(xxx)xxxxx-xxxx">
-                    <br /><br />
+                            <div class="form-group">
+                                <label class="labelClass" for="numero">Número: </label>
+                                <input class="inputClass" type="number" id="number" placeholder="(12)34567-8910">
+                                <div class="error-hint hidden">Preencha um número válido!</div>
+                            </div>
+                            <div class="form-group">
+                                <label class="labelClass" for="marcador">Marcador: </label>
+                                <select class="inputClass" id="option">
+                                    <option id="A"></option>
+                                    <option id="B" value="Telefone Celular">Telefone Celular</option>
+                                    <option id="C" value="Telefone Residencial">Telefone Residencial</option>
+                                    <option id="D" value="Telefone Comercial">Telefone Comercial</option>
+                                </select>
+                            </div>
 
-                    <label for="marcador">Marcador: </label>
-                    <select id="option">
-                        <option id="A"></option>
-                        <option id="B" value="Telefone Celular">Celular</option>
-                        <option id="C" value="Telefone Residencial">Telefone Residencial</option>
-                        <option id="D" value="Telefone Comercial">Telefone Comercial</option>
-                    </select>
-                    <br /><br />
+                            <div class="form-group">
+                                <label class="labelClass" for="email">E-mail: </label>
+                                <input class="inputClass" type="email" id="email">
+                            </div>
+                               
+                            <button id="formButton">Salvar Contato</button>
+                        </form>
+                    </div>
+                </div>
 
-                    <label for="email">E-mail: </label>
-                    <input type="email" id="email">
-                    <br /><br />
-
-                    <button id="formButton">Salvar Contato</button>
-                    <br />
-
-                </form>
-            </div>
-        </div>
-
-        <div class="content2">
-            <div id="searchField">
-                <input type="text" id="searchBar" placeholder="Pesquisar" style="opacity: 70%;">
-                <div class="search-icon" style="margin-top: 4px">
-                    <a><i class="material-icons" style="font-size:24px">search</i></a>
+                <div class="content2">
+                    <div id="searchField">
+                        <input type="text" id="searchBar" placeholder="Pesquisar" style="opacity: 70%;">
+                        <div class="search-icon" style="margin-top: 4px">
+                            <a><i class="material-icons" style="font-size:24px">search</i></a>
+                        </div>
+                    </div>
+                    <div id="contactList">
+                        <table id="table">
+                            <tbody id="tbody"></tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-            <div id="contactList">
-                <table id="table">
-                    <tbody id="tbody"></tbody>
-                </table>
-            </div>
-        </div>
+        </main>
+
     </div>
 
     <script type="text/javascript" src="script.js"></script>

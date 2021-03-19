@@ -3,14 +3,38 @@ const contactName = document.getElementById("contactName");
 const contactNumber = document.getElementById("number");
 const email = document.getElementById("email");
 const tbody = document.getElementById('tbody');
+
 let contactSaved = [];
 let dinamicID = 0;
 let allowedCharacters = /^[A-Za-z \u00C0-\u017F]+$/;
+let isFormValid = false;
+let isValidationOn = false;
+
+const resetElm = (elm) => {
+    elm.nextElementSibling.classList.add("hidden");
+};
+const invalidateElm = (elm) => {
+    elm.nextElementSibling.classList.remove("hidden");
+}
+
+let inputs = [contactName, contactNumber];
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
+    isValidationOn = true;
     checkInputs();
-})
+    if (isFormValid) {
+        getInfo();
+       
+    }
+});
+
+inputs.forEach((input) => {
+    input.addEventListener("input", () => {
+        checkInputs();
+    })
+});
+    
 
 function cleanForm() {
     document.getElementById("form").reset();
@@ -21,47 +45,41 @@ function cleanSearchField() {
 }
 
 function checkInputs() {
-    if (contactNumber.value.length != 11 && contactName.value == '') {
-        alert("É necessário que preencha o nome e o número do contato!")
-        cleanForm();
-        contactName.focus()
-        return false
-    }
+    if (!isValidationOn) return;
 
-    if (contactNumber.value.length != 11 && !allowedCharacters.test(contactName.value)) {
-        alert("Caracter(es) inválido(s) e número inválido!")
-        contactName.value = '';
-        contactNumber.value = '';
-        contactName.focus();
-        return false
-    }
+    isValidationOn = false;
+    isFormValid = true;
 
-    if (contactNumber.value.length != 11) {
-        alert("Preencha um número válido!");
-        contactNumber.value = '';
-        contactNumber.focus();
-        return false
+    resetElm(contactName);
+    resetElm(contactNumber);
+
+    if (contactNumber.value.length > 11 || contactNumber.value.length < 10) {
+        invalidateElm(contactNumber);
+        isFormValid = false;
     }
     if (contactName.value == '') {
-        alert("Preencha o nome do contato!")
-        contactName.value = '';
-        contactName.focus()
-        return false
+       
     }
 
     if (!allowedCharacters.test(contactName.value)) {
-        alert("Caracter inválido!")
-        contactName.value = '';
-        contactName.focus();
-        return false
+        invalidateElm(contactName);
+        isFormValid = false;
     }
-    else {
-        getInfo();
-    }
+
 }
 
+contactName.addEventListener("input", () => {
+    checkInputs()
+})
+
+contactNumber.addEventListener("input", () => {
+    checkInputs()
+})
+
+
+
 function getInfo() {
-    contactName.focus()
+    contactName.focus();
     let marker = document.getElementById("option");
     let chosenMarker = marker.options[marker.selectedIndex].value;
     if (chosenMarker.value == 0) {
@@ -79,13 +97,9 @@ function getInfo() {
     orderList();
 
     function orderList() {
-        var namesToLowerCase = [];
-        for (var i = 0; i < contactSaved.length; i++) {
-            namesToLowerCase.push(contactSaved[i].name.toLowerCase());
-        }
-        const contactsOrdem = namesToLowerCase.sort(function (a, b) {
-            if (a.name > b.name) return 1;
-            else if (b.name > a.name) return -1;
+        const contactOrdered = contactSaved.sort(function (a, b) {
+            if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
+            else if (b.name.toLowerCase() > a.name.toLowerCase()) return -1;
             else return 0
         });
         loadList(contactSaved);
@@ -108,28 +122,39 @@ function loadList(contactSaved) {
         dataHTML += `<tr id="${dinamicID}" class="row-item">
         <td class="item">
             <div style="border-bottom: 1px solid white">
-                <a><i class="material-icons" style="font-size:24px">person</i></a></br>
-                <span id="nome">${contactSaved[i].name} </span>
+            <a class="icon">
+                <i class="material-icons" style="font-size:24px">person</i>
+            </a><br>
+                <span class="info">${contactSaved[i].name} </span>
             </div>
             <div style="border-bottom: 1px solid white">
-                <a><i class="material-icons" style="font-size:24px">call</i></i></a></br>
+                <a class="icon">
+                    <i class="material-icons" style="font-size:24px">call</i>
+                </a><br>
                 <span class="info">${contactSaved[i].number}</span></br>
-                <span class="info">${contactSaved[i].tipoNumero}</span>
+                <span class="info" id="numberType">${contactSaved[i].tipoNumero}</span>
             </div>
             <div style="border-bottom: 1px solid white">
-                <a><i class="material-icons" style="font-size:24px">mail_outline</i></a></br>
-                <span class="info"> E-mail: ${contactSaved[i].emailContact}</span>
+                <a class="icon"> <i class="material-icons" style="font-size:24px; background-color: #f5f5f5">mail_outline</i></a><br>
+                <span class="info">${contactSaved[i].emailContact}</span>
             </div>
-            ${"<input id=\"deleteButton\" type=\"button\" value= \"Deletar\" onclick=\"getID(this)\">"}
-            ${"<input id=\"editButton\" type=\"button\" value= \"Editar\" onclick=\"editContact(this)\">"}</td>
+            <a id="deleteButton" onclick="getID(this)">
+                <i class="material-icons" style="font-size:24px; color:red">delete</i>
+            </a>
+            <a id="editButton" onclick="editContact(this)">
+                <i class="material-icons" style="font-size:24px; color:blue">mode_edit</i>
+            </a>
+           </td>
         </tr><br>`;
     }
     table.innerHTML = dataHTML;
 }
 
 function editContact(info) {
-    window.scrollTo(0, 0)
     cleanSearchField();
+    form.focus(function () {
+        form.css("border", "1px solid black")
+    });
     let selectedID = parseInt(info.parentNode.parentNode.id);
 
     for (var i = 0; i < contactSaved.length; i++) {

@@ -1,218 +1,120 @@
-
 body {
+    padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
-.container {
-    display: grid;
-    height: 100vh;
-    grid-template-columns: 0.4fr 0.5fr 1fr;
-    grid-template-rows: 0.2fr 1.5fr;
-    grid-template-areas: "header header header" "sidebar content1 content2 ";
-    grid-column-gap: 10px;
+main {
+    background-image: linear-gradient(#85ceff, #85ffb4);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.header {
-    grid-area: header;
-}
-
-.sidebar {
-    grid-area: sidebar;
+.mainArea {
+    background: white;
+    height: 800px;
+    width: 90%;
+    display: flex;
+    border-radius: 20px;
+    margin: 20px 30px;
 }
 
 .content1 {
-    grid-area: content1;
-    justify-self: center;
+    flex: 1;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(243, 243, 243);
+    padding-left: 3px;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 3px 0 5px -2px #888;
 }
 
-.content2 {
-    grid-area: content2;
+img {
+    width: 100px;
+    height: 120px;
 }
 
-header {
-    background-color: #0d5794;
-    color: white;
-    display: inline-flex;
-    height: 90px;
+.logo {
+    height: 200px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+#formulary {
+    height: 680px;
 }
 
 form {
-    margin-top: 50px;
-    padding: 30px 10px 10px 10px;
-    background-color: #e1e1e1;
+    padding-top: 6rem;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
-    box-shadow: 2px 3px 5px #696969;
-    height: 210px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 5px;
+    padding-right: 15px;
 }
 
-
-img {
-    margin-top: 10px;
-    margin-left: 5px;
-    height: 70px;
-    width: 60px;
-}
-
-h1 {
-    font-size: 30px;
-    color: white;
-    margin-top: 30px;
-    padding-left: 20px;
-}
-
-span {
-    margin-left: 3px;
-}
-
-.icon {
-    display: inline;
-    margin-top: 20px;
-}
-
-#contactList {
-    width: 600px;
-    height: 650px;
-    box-shadow: 2px 3px 5px #696969;
-    margin-left: 10px;
-    overflow-y: auto;
-}
-
-table {
-    margin-top: 10px;
-    width: 100%;
-    height: auto;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 700; 
-}
-
-.item {
-    background-color: #eeeeee;
-    border: 1px solid #747474;
-}
-
-.info {
+#numberType {
     font-size: 12px;
 }
 
-.row-item {
-    height: 135px;
+.hidden {
+    display: none;
 }
 
+.error-hint {
+    margin-top: 4px;
+    color: red;
+    font-size: 12px;
+}
 
-input[type=text] {
-    background-color: white;
+.form-group {
+    height: 50px;
+    margin-bottom: 40px;
+    display: block;
+    width: 100%;
+}
+
+.inputClass {
+    background-color: rgb(243, 243, 243);
     border: 0;
     border-bottom: 1px solid #d9d9d9;
-    height: 20px;
-    width: 85%;
+    height: 30px;
+    font-size: 14px;
+    width: 100%;
 }
 
-    input[type=text]:focus {
-        outline: 1px solid rgb(100, 100, 100);
-    }
-
-input[type=email] {
-    background-color: white;
-    border: 0;
-    border-bottom: 1px solid #d9d9d9;
-    height: 20px;
-    width: 84%;
+.labelClass {
+    font-size: 14px;
 }
 
-    input[type=email]:focus {
-        outline: 1px solid rgb(100, 100, 100);
-    }
-
-input[type=number] {
-    background-color: white;
-    border: 0;
-    border-bottom: 1px solid #d9d9d9;
-    height: 20px;
-    width: 81%;
+.inputClass:focus {
+    outline: none;
+    border-bottom: 1px solid #464646;
 }
-
-    input[type=number]:focus {
-        outline: 1px solid rgb(100, 100, 100);
-    }
-
-#option {
-    background-color: white;
-    border: 0;
-    border-bottom: 1px solid #d9d9d9;
-    height: 20px;
-    width: 79%;
-}
-
-    #option:focus {
-        outline: 1px solid gray;
-    }
-#searchField {
-    display: inline-flex;
-    padding-left: 10px;
-    margin-top: 50px;
-    margin-bottom: 5px;
-}
-
-#searchBar {
-    text-align: left;
-    border: 1px solid #dddddd;
-    width: 570px;
-    height: 26px;
-    box-shadow: 1px 1px 2px rgb(110, 110, 110);
-}
-
-    #searchBar:focus {
-        outline: 1px solid rgb(100, 100, 100);
-    }
-
-#editButton {
-    cursor: pointer;
-    float: left;
-    border: 0;
-    background: rgb(30, 53, 255);
-    text-align: center;
-    color: white;
-    border-radius: 2px;
-    width: 80px;
-    margin-top: 10px;
-}
-
-    #editButton:hover {
-        background: rgb(18, 33, 165);
-        transition: background 0.5s;
-    }
-
-#deleteButton {
-    cursor: pointer;
-    float: right;
-    border: 0;
-    background: rgb(240, 62, 62);
-    text-align: center;
-    color: white;
-    border-radius: 2px;
-    width: 80px;
-    margin-top: 10px
-}
-
-    #deleteButton:hover {
-        background: rgb(187, 18, 18);
-        transition: background 0.5s;
-    }
-
-
 
 #formButton {
     background: #0d5794;
+    height: 40px;
     box-shadow: 1px 1px 5px rgb(110, 110, 110);
     border-radius: 2px;
-    padding: 5px 5px;
     border: 0;
-    width: 400px;
+    width: 90%;
     cursor: pointer;
     font-weight: 600;
     color: white;
+    margin-left: 5%;
+    margin-top: 15px;
 }
 
     #formButton:hover {
@@ -220,76 +122,192 @@ input[type=number] {
         transition: background 0.5s;
     }
 
-.search-icon {
-    float: right;
+
+.content2 {
+    flex: 2;
+    height: 800px;
 }
-@media only screen and (max-height: 768px){
-    #contactList{
-        height: 520px;
+
+#contactList {
+    display: flex;
+    flex-direction: column;
+    height: 735px;
+    overflow-y: auto;
+    align-items: center;
+}
+
+table {
+    margin-top: 10px;
+    width: 90%;
+    height: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    align-items: center;
+}
+
+.item {
+    width: 100%;
+    background-color: #f5f5f5;
+    border: 1px solid #a8a7a7;
+    border-radius: 10px;
+    padding: 10px 3px;
+    box-shadow: 2px 5px 10px rgb(160, 160, 160);
+}
+
+.info {
+    margin-left: 4px;
+}
+
+#searchField {
+    height: 40px;
+    margin-bottom: 5px;
+    display: flex;
+}
+
+#searchBar {
+    margin-top: 10px;
+    margin-left: 4%;
+    width: 90%;
+}
+
+    #searchBar:focus {
+        outline: 1px solid #464646;
     }
+
+.search-icon {
+    padding-top: 10px;
 }
 
-@media only screen and (max-width: 1320px) {
+#editButton {
+    cursor: pointer;
+    float: left;
+    margin-top: 10px;
+}
 
-    .container {
-        grid-template-columns: 0.2fr 0.4fr 1fr;
-        grid-template-areas: "header header header" "sidebar content1 content2";
+#deleteButton {
+    cursor: pointer;
+    float: right;
+    margin-top: 10px
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+
+    .mainArea {
+        height: 900px;
+        flex-direction: column;
+        margin: 10px 30px
     }
 
     .content1 {
-        justify-self: right
+        display: flex;
+        flex:0;
+        flex-direction: row;
+        height: 250px;
+        box-shadow: 0px 3px 5px -2px #888;
+    }
+
+    .logo {
+        width: 25%;
+        margin-top: 10px;
+        display: block;
+        text-align: left;
+        margin-left: 5px;
+    }
+
+    img {
+        width: 65px;
+        height: 80px;
+        margin-left: 10%;
+    }
+
+    h2 {
+        font-size: 13px;
+        display: block;
+    }
+
+    #formulary {
+        height: 250px;
+    }
+
+    form {
+        padding-top: 0.5rem;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 700;
+        display: block;
+        position: relative;
+    }
+
+    .form-group {
+        height: 50px;
+        margin-bottom: 2px;
+        width: 60vw;
+    }
+
+    .inputClass {
+        height: 20px;
+        font-size: 12px;
+        width: 100%;
+    }
+
+    .labelClass {
+        font-size: 12px;
+        align-content: center;
+    }
+
+    .error-hint {
+        font-size: 11px;
+        margin-top: 0;
+    }
+
+    #formButton {
+        height: 20px;
+        width: 120px;
+        margin: 0;
+    }
+
+    .info {
+        font-size: 12px;
     }
 
     .content2 {
-        justify-self: left;
-    }
-}
-
-@media only screen and (max-width: 1185px) {
-    .container {
-        grid-template-columns: 0.4fr 1fr;
-        grid-template-areas: "header header header" "content1 content2";
+        flex:0;
+        height: 770px;
+        padding: 0;
+        margin: 0;
     }
 
-    .content1 {
-        padding-left: 10px;
-    }
-}
-
-@media only screen and (max-width: 1085px) {
-    .container{
-        grid-gap: 0;
-    }
-    .content1{
-        justify-self: left;
-    }
-}
-
-@media only screen and (max-width: 1055px) {
-    body {
+    #contactList {
+        height: 580px;
         overflow-y: auto;
     }
 
-    .container {
-        grid-template-columns: 1fr;
-        grid-template-rows: 0.2fr 1fr 1fr;
-        grid-template-areas: "header" "content1" "content2";
-    }
-
-    .content1 {
-        justify-self: center;
-    }
-
-    .content2 {
-        justify-self: center;
+    #searchBar {
+        margin-left: 3%;
     }
 }
 
-@media only screen and (max-width: 618px) {
-    #searchField{
-        width: 480px;
+@media screen and (max-width: 600px) {
+    h2 {
+        display: none;
     }
-    #contactList {
-        width: 480px;
+
+
+    .inputClass {
+        font-size: 12px;
+    }
+
+    #searchBar {
+        margin-left: 2%;
     }
 }
+
