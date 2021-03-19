@@ -1,17 +1,18 @@
 # agendaDeContatos
 Olá, como vai?
 
-#Sobre o projeto 
--O projeto é uma agenda de contatos que fiz usando Javascript, HTML e CSS, com objetivos de estudo acrescentar ao portfólio.
+#Sobre o projeto<br>
+-O projeto é uma agenda de contatos que fiz usando Javascript, HTML e CSS, com objetivos de estudo acrescentar ao portfólio.<br>
 
-#Instalação
-  -Para instalação: -Baixe o arquivo .zip.
-  -Extraia os arquivos para um local de sua preferência. 
-  -Abra o arquivo "index.html"
-#Link para acessar o projeto
+#Instalação<br>
+  -Para instalação: -Baixe o arquivo .zip.<br>
+  -Extraia os arquivos para um local de sua preferência. <br>
+  -Abra o arquivo "index.html".<br>
+
+#Link para acessar o projeto<br>
 - https://epic-bhabha-a6c907.netlify.app/
 
-#Tecnologias
--Javascript -HTML -CSS
+#Tecnologias<br>
+-Javascript -HTML -CSS<br>
 
 Obrigado!
