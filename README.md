@@ -1,20 +1,42 @@
-# agendaDeContatos
-Olá, como vai?
+# Agenda de Contatos
 
-#Sobre o projeto<br>
--O projeto é uma agenda de contatos que fiz usando Javascript, HTML e CSS, com objetivos de estudo para acrescentar ao portfólio.<br>
+Aplicação web desenvolvida com foco em estudo de JavaScript, HTML e CSS, voltada para a prática de lógica de programação, manipulação do DOM e persistência de dados no navegador.
 
-#Instalação<br>
-  -Para instalação: -Baixe o arquivo .zip. <br>
-  -Extraia os arquivos para um local de sua preferência. <br>
-  -Abra o arquivo "index.html". <br>
+A aplicação permite cadastrar, editar e excluir contatos, armazenando as informações utilizando Local Storage, sem dependência de backend.
 
-#Link para acessar o projeto<br>
-- https://epic-bhabha-a6c907.netlify.app/
+---
 
-#Tecnologias<br>
--Javascript <br>
--HTML <br>
--CSS <br>
+## Objetivo do Projeto
 
-Obrigado!
+Este projeto foi desenvolvido como parte do meu aprendizado em desenvolvimento frontend, com o objetivo de consolidar conceitos básicos de JavaScript e organização de código.
+
+---
+
+## Funcionalidades
+
+- Cadastro de contatos  
+- Edição e exclusão de registros  
+- Persistência de dados com Local Storage  
+- Interface simples e funcional  
+
+---
+
+## Tecnologias Utilizadas
+
+- JavaScript  
+- HTML  
+- CSS  
+
+---
+
+## Como Executar
+
+1. Baixe ou clone o repositório  
+2. Extraia os arquivos (caso esteja em .zip)  
+3. Abra o arquivo `index.html` no navegador  
+
+---
+
+## Demonstração
+
+https://epic-bhabha-a6c907.netlify.app/
